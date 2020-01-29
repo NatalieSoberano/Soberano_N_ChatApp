@@ -3,4 +3,20 @@
 
 export default {
 
+props: ['msg'],
+
+template: `
+        <p :class="{ 'my-message' : matchedID }" class="new-message">
+            <span>{{ msg.message.name }} says: </span>
+            {{ msg.message.content }}
+        </p>
+`,
+
+data: function(){
+    return {
+        message: "hellow from the template",
+        matchedID: this.$parent.socketID == this.msg.id
+    };
+}
+
 }
