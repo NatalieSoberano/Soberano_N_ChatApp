@@ -34,7 +34,7 @@ const vm = new Vue ({
             console.log('handle emit message');
 
             //the double pipe || is an or operator
-            // if the first value is set, use it, else use whatever comes after the or 
+            //if the first value is set, use it, else use whatever comes after the or 
 
             socket.emit('chat_message', {
                 content: this.message, 
