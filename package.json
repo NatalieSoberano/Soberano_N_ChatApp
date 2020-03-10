@@ -1,10 +1,10 @@
 {
-  "name": "vanrys_t_chatapp",
+  "name": "soberano_n_chatapp",
   "version": "1.0.0",
   "description": "social media app ",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "npm start"
   },
   "author": "TVR",
   "license": "ISC",

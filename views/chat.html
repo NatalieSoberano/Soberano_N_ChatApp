@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Chat Room Inbox</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+	<main id="app">
+		<section class="form-container">
+			<form>
+				<label for="message">Type your message:</label>
+				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+				<input @click.prevent="dispatchMessage" type="submit">
+			</form>
+		</section>
+
+		<section class="messages">
+			<ul id="messages">
+				<!-- render a new message component for every message -->
+				<newmessage v-for="message in messages" :msg="message"> </newmessage>
+			</ul>
+		</section>
+	</main>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="module" src="js/main_vm.js"></script>
+</body>
+
+</html>
