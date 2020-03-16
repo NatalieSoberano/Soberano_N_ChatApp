@@ -1,7 +1,6 @@
 // imports always go first - if we're importing anything
 import ChatMessage from "./modules/ChatMessage.js";
 
-
 const socket = io();
 
 // the packet is whatever data we send through with the connected event from the server 
