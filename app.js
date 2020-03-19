@@ -1,8 +1,5 @@
 var express = require('express');
 var app = express();
-// var typing = false;
-// var timeout = undefined;
-// var user;
 
 // add socket here 
 const io = require('socket.io')();
@@ -34,18 +31,10 @@ io.on('connection', function(socket){ // socket is your connection
     //this is the packet we are passing through - id and a message
     socket.emit('connected', {sID: socket.id, message: "new connection"});
 
-    // $('#message').keypress((e)=>{
-    // if(e.which!=13){
-    //     typing=true
-    //     socket.emit('typing', {user:user, typing:true})
-    //     clearTimeout(timeout)
-    //     timeout=setTimeout(typingTimeout, 3000)
-    // }else{
-    //     clearTimeout(timeout)
-    //     typingTimeout()
-    //     sendMessage()
-    //     }
-    // })
+    socket.on('typing', (data)=>{
+        console.log('user is typing')
+        io.emit('typingNotification', { user: data.name, msg: `${data.name} is typing...`} )
+    })
     
     socket.on('chat_message', function(msg){
         console.log(msg); // lets see what the payload dis from the client side
@@ -59,17 +48,4 @@ io.on('connection', function(socket){ // socket is your connection
         console.log('a user has disconnected');
     })
 
-    // socket.on('display', (data)=>{
-    //     if(data.typing==true)
-    //         $('.typing').text(`${data.user} is typing...`)
-    //     else
-    //         $('.typing'.text(""))
-    // })
-
-    // socket.on('typing', (data)=>{
-    //     if(data.typing==true)
-    //         io.emit('display', data)
-    //     else    
-    //         io.emit('display', data)
-    // })
 })

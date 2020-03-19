@@ -13,7 +13,7 @@
 		<section class="form-container">
 			<form>
 				<label for="message">Type your message:</label>
-				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+				<textarea @keydown="captureKeyStroke" @blur="releaseKeyStrokes" v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input @click.prevent="dispatchMessage" type="submit">
 			</form>
 		</section>
@@ -23,13 +23,10 @@
 				<!-- render a new message component for every message -->
 				<newmessage v-for="message in messages" :msg="message"> </newmessage>
 			</ul>
+			<!-- <div class="typing"></div> -->
 		</section>
+
 	</main>
-	<!-- <script
-  		src="https://code.jquery.com/jquery-3.4.1.min.js"
-  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-		crossorigin="anonymous">
-	</script> -->
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="module" src="js/main_vm.js"></script>
 </body>
