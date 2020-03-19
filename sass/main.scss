@@ -17,6 +17,9 @@ main {
 	flex: 1; 
 	border: 6px solid #bfcfd6;
 	background-color: #e3edf1;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 
 	label { display: block; margin-bottom: 0.5rem; }
 }
@@ -46,6 +49,7 @@ form {
 	//background: #000;
 	padding: 3px;
 	margin: 12px auto;
+	bottom: 0%;
 
 	input[type=submit] { 
 		width: auto; 
