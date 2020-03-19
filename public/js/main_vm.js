@@ -10,6 +10,11 @@ function setUserId({sID}){
     console.log(sID);
     vm.socketID = sID;
 }
+function showTyping({msg}){
+    console.log(msg);
+    // this is where the UI gets triggered 
+    // opacity none for example
+}
 
 function showDisconnectMessage(){
     console.log('a user disconnected');
@@ -24,7 +29,8 @@ const vm = new Vue ({
         socketID: "",
         message: "",
         nickname: "",
-        messages: []
+        messages: [],
+        typing:false
     }, 
 
     methods: {
@@ -41,6 +47,23 @@ const vm = new Vue ({
             })
 
             this.message = "";
+        },
+
+        captureKeyStroke(){
+
+            if (!this.typing) {
+                socket.emit('typing', {
+                name: this.nickname || "anonymous",
+                typing: true
+                })
+            }
+
+            this.typing=true;
+        },
+
+        releaseKeyStrokes(){
+
+            this.typing=false;
         }
     }, 
 
@@ -57,3 +80,4 @@ const vm = new Vue ({
 socket.addEventListener('connected', setUserId);
 socket.addEventListener('disconnect', showDisconnectMessage);
 socket.addEventListener('new_message', appendMessage);
+socket.addEventListener('typingNotification', showTyping);

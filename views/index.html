@@ -10,11 +10,14 @@
 
 	<section class="form-container">
 		<form>
+			<label for="nickname">User Name</label>
+			<input v-model="input.username" type="text" id="nickname" class="nickname" placeholder="First name?">
+
 			<label for="nickname">First Name</label>
-			<input type="text" id="nickname" class="nickname" placeholder="First name?">
+			<input type="text" id="fName" class="name" placeholder="First name?">
 
 			<label for="nickname">Last Name</label>
-			<input type="text" id="nickname" class="nickname" placeholder="Last name?">
+			<input type="text" id="lName" class="name" placeholder="Last name?">
 			<button><a href="/chat">Enter</a></button>
 		</form>
 	</section>
