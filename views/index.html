@@ -4,21 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Welcome to Chat Room</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 	<h1>Welcome to Chat Room</h1>
 
-	<section class="form-container">
+	<section class="form-container-login">
 		<form>
 			<label for="nickname">User Name</label>
-			<input v-model="input.username" type="text" id="nickname" class="nickname" placeholder="First name?">
+			<input v-model="input.username" type="text" id="nickname" class="nickname logininput" placeholder="Username">
 
 			<label for="nickname">First Name</label>
-			<input type="text" id="fName" class="name" placeholder="First name?">
+			<input type="text" id="fName" class="name logininput" placeholder="First Name">
 
 			<label for="nickname">Last Name</label>
-			<input type="text" id="lName" class="name" placeholder="Last name?">
-			<button><a href="/chat">Enter</a></button>
+			<input type="text" id="lName" class="name logininput" placeholder="Last Name">
+			<button class="button"><a href="/chat">Enter</a></button>
 		</form>
 	</section>
 </body>
