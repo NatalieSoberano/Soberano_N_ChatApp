@@ -10,12 +10,13 @@
 * Socket.io - JavaScript Library 
 * [MAMPStack](Macintosh, Apache, MySql and PHP) - Server Side
 
-## Project Objective 
+## Project Objective:
 * To create an interactive Chat Application 
 
-## Instilation
+## Instilation:
 * Open Terminal on your computer
-* Choose the location of where you want your repository to be stored; for    example placing in your htdocs folder
+* Choose the location of where you want your repository to be stored; for example placing  
+in your htdocs folder
 * "$ cd Desktop"
 * Clone the reposity to your local machine
 * "git clone https://github.com/NatalieSoberano/Soberano_N_ChatApp.git"
@@ -24,8 +25,14 @@
 * With the project selected type "npm start" in the terminal window 
 * Head to localhost:3030 
 
-## Design 
+## Design:
 * Fonts
-    * 
+    * Headings: Comfortaa 
+    * Body: Roboto 
+        * Sourced from Google Fonts
 * Colours
-    * 
+    * Pink: #F24987
+    * Dark Blue: #0487D9
+    * Light Blue: #049DD9
+    * Yellow: #F2E635
+    * White: #F2F2F2
