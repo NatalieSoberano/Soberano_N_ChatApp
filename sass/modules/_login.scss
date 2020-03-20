@@ -1,0 +1,76 @@
+h1 {
+    text-align: center;
+    font-size: 60px;
+    padding-top: 30px;
+    text-transform: uppercase;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body input {
+    font-family: $body-font;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.blue {
+    background-color: $Light-blue;
+    height: 40px;
+}
+
+.blue-footer {
+    background-color: $Light-blue;
+    height: 40px;
+}
+
+#logo-main {
+    height: 350px;
+    width: 500px;
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 20px;
+}
+
+.logininput {
+    border-color: black;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    margin-right: 40px;
+    border-radius: 4px; 
+    padding: 0.4rem; 
+    border-style: solid;
+}
+
+#nickname {
+    margin-left: 40px;
+}
+
+#button-login{
+    width: 125px;
+    height: auto;
+    border-color: black;
+    background-color: $Dark-blue;
+    height: 35px;
+    border-radius: 4px; 
+}
+
+a {
+    text-decoration: none;
+    font-family: $body-font;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#button-login a {
+    color: $White;
+}
+
+
+
