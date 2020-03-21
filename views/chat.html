@@ -10,11 +10,19 @@
 </head>
 
 <body>
+	<section class="blue" id="blueChat">
+		<nav id="messagingNav">
+			<ul><li class="navText"><a href="#">Chat Room</a></li></ul>
+			<ul><li><a href="#"><img id="logoSmall" src="images/logo.svg" alt="Chat Room Logo"></a></li></ul>
+			<ul><li><a href="index.html"><img src="images/signout.svg" alt="Sign Out" id="signout"></a></li></ul>
+		</nav>
+	
+	</section>
 	<main id="app">
 		<section class="form-container">
 			<form>
-				<label for="message">Type your message:</label>
-				<textarea @keydown="captureKeyStroke" @blur="releaseKeyStrokes" v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+				<label for="message" id="typeMsg"></label>
+				<textarea @keydown="captureKeyStroke" @blur="releaseKeyStrokes" v-model="message" class="message" type="text" autocomplete="off" id="textarea" placeholder="Type your message here:"></textarea>
 				<input @click.prevent="dispatchMessage" type="submit">
 			</form>
 		</section>

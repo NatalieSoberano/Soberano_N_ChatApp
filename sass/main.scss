@@ -13,7 +13,7 @@ html, body {
 	height: 100%;
 }
 
-body { 
+body, textarea, input{ 
 	font-family: $body-font;
 }
 
@@ -27,3 +27,15 @@ main {
 	flex-direction: row;
 }
 
+a {
+    text-decoration: none;
+    font-family: $body-font;
+    text-transform: uppercase;
+    font-size: 18px;
+	letter-spacing: 1px;
+	color: black;
+}
+
+a:hover {
+	color: $White;
+}
