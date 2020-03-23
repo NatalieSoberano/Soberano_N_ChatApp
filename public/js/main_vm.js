@@ -10,10 +10,16 @@ function setUserId({sID}){
     console.log(sID);
     vm.socketID = sID;
 }
+
 function showTyping({msg}){
     console.log(msg);
     // this is where the UI gets triggered 
     // opacity none for example
+    if (this.typing){
+        typing.style.opacity = "90";
+    }else {
+        typing.style.opacity = "0.1";
+    }  
 }
 
 function showDisconnectMessage(){
