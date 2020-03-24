@@ -55,6 +55,32 @@ const vm = new Vue ({
             this.message = "";
         },
 
+    //     name() {
+    //     if (this.input.username != "") {
+    //         //user the FormData object to collect and send our params 
+    //         let formData = new FormData();
+
+    //         formData.append("username", this.input.username);
+
+    //         let url = "./views/index.html?user=true";
+
+    //         fetch(url, {
+    //             method: "POST",
+    //             body: formData
+    //         })
+
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+
+    //             //push the user to the users page
+    //             this.$router.replace({name:"users"});
+
+                
+    //         })
+    //         .catch((err) => console.log(err));
+    //     } 
+    // },
         captureKeyStroke(){
 
             if (!this.typing) {
