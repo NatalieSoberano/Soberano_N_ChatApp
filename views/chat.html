@@ -32,9 +32,12 @@
 				<!-- render a new message component for every message -->
 				<newmessage v-for="message in messages" :msg="message"> </newmessage>
 			</ul>
-			<span class="typing"></span>
-			<span class="typing"></span>
-			<span class="typing"></span>
+			<div class="showTyping">
+				<span class="typing"></span>
+				<span class="typing"></span>
+				<span class="typing"></span>
+			</div>
+
 		</section>
 
 	</main>

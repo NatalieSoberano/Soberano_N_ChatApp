@@ -26,6 +26,16 @@
 			<button class="button" id="button-login"><a href="/chat">Enter</a></button>
 		</form>
 	</section>
+	<script> 
+		let loginButton = document.querySelector('#button-login');
+
+		function saveUser(){
+			let userName = document.querySelector("#nickname").value;
+			localStorage.setItem("cachedUser", userName );
+		}
+
+		loginButton.addEventListener("click", saveUser);
+	</script>
 </body>
 <footer class="blue-footer"></footer>
 </html>

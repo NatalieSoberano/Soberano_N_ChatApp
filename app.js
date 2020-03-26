@@ -33,7 +33,7 @@ io.on('connection', function(socket){ // socket is your connection
 
     socket.on('typing', (data)=>{
         console.log('user is typing')
-        io.emit('typingNotification', { user: data.name, msg: `${data.name} is typing...`} )
+        io.emit('typingNotification', { user: data.name, id:socket.id, msg: `${data.name} is typing...`} )
     })
     
     socket.on('chat_message', function(msg){

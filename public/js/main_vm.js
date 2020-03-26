@@ -11,15 +11,13 @@ function setUserId({sID}){
     vm.socketID = sID;
 }
 
-function showTyping({msg}){
+function showTyping({msg, id}){
     console.log(msg);
     // this is where the UI gets triggered 
     // opacity none for example
-    if (this.typing){
-        typing.style.opacity = "90";
-    }else {
-        typing.style.opacity = "0.1";
-    }  
+    if(id!==vm.sID) {
+        document.querySelector(".showTyping").style.opacity = 1;
+    }
 }
 
 function showDisconnectMessage(){
@@ -28,6 +26,7 @@ function showDisconnectMessage(){
 
 function appendMessage(message){
     vm.messages.push(message);
+    document.querySelector(".showTyping").style.opacity = 0;
 }
 
 const vm = new Vue ({
@@ -55,32 +54,6 @@ const vm = new Vue ({
             this.message = "";
         },
 
-    //     name() {
-    //     if (this.input.username != "") {
-    //         //user the FormData object to collect and send our params 
-    //         let formData = new FormData();
-
-    //         formData.append("username", this.input.username);
-
-    //         let url = "./views/index.html?user=true";
-
-    //         fetch(url, {
-    //             method: "POST",
-    //             body: formData
-    //         })
-
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-
-    //             //push the user to the users page
-    //             this.$router.replace({name:"users"});
-
-                
-    //         })
-    //         .catch((err) => console.log(err));
-    //     } 
-    // },
         captureKeyStroke(){
 
             if (!this.typing) {
@@ -98,6 +71,10 @@ const vm = new Vue ({
             this.typing=false;
         }
     }, 
+
+    created: function(){
+        this.nickname = localStorage.getItem("cachedUser");
+    },
 
     mounted: function() {
         console.log('vue is done mounting');
